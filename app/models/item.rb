@@ -17,9 +17,9 @@ class Item
     FormatNumber.new(total_price * TaxRate.new(product).tax_rate).format_round
   end
 
-  private
-
   attr_reader :quantity, :product, :price
+
+  private
 
   def total_price
     quantity * price

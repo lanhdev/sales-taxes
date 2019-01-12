@@ -3,7 +3,7 @@ require_relative '../../app/models/item'
 require_relative '../../app/decorators/format_number'
 require_relative '../../lib/tax_rate'
 
-describe Item do
+describe Receipt do
   let(:item1) { Item.new(1, 'book', 12.49) }
   let(:item2) { Item.new(1, 'music cd', 14.99) }
   let(:receipt) { Receipt.new }
