@@ -1,9 +1,3 @@
-require_relative '../../app/models/receipt'
-require_relative '../../app/models/item'
-require_relative '../../app/decorators/format_number'
-require_relative '../../lib/tax_rate'
-require_relative '../../lib/csv_exporter'
-
 describe CSVExporter do
   let(:exporter) { CSVExporter.new(data_export) }
   let(:data_export) { Receipt.new }

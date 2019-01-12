@@ -1,9 +1,3 @@
-require_relative '../../app/models/receipt'
-require_relative '../../app/models/item'
-require_relative '../../app/decorators/format_number'
-require_relative '../../lib/tax_rate'
-require_relative '../../lib/csv_importer'
-
 describe CSVImporter do
   let(:importer) { CSVImporter.new(data_import) }
   let(:data_import) { Dir.pwd + '/resources/input1.csv' }

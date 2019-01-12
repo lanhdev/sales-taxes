@@ -1,5 +1,3 @@
-require_relative '../../lib/tax_rate'
-
 describe TaxRate do
   let(:tax_rate) { TaxRate.new(product) }
 

@@ -1,5 +1,3 @@
-require_relative '../../app/decorators/format_number'
-
 describe FormatNumber do
   let(:formatter) { FormatNumber.new(number) }
 

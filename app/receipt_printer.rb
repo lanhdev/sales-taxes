@@ -1,4 +1,8 @@
 class ReceiptPrinter
+  def initialize(input_file)
+    @input_file = input_file
+  end
+
   def execute
     receipt = CSVImporter.new(input_file).import
     CSVExporter.new(receipt).export
@@ -6,7 +10,5 @@ class ReceiptPrinter
 
   private
 
-  def input_file
-    Dir.pwd + '/resources/input1.csv'
-  end
+  attr_reader :input_file
 end
