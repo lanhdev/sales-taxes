@@ -11,7 +11,7 @@ class Item
   end
 
   def total_price
-    rounded(original_price + sales_taxes))
+    rounded(original_price + sales_taxes)
   end
 
   private
