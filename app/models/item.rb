@@ -1,9 +1,4 @@
 class Item
-  module TaxRate
-    BASIC = 0.1
-    IMPORTED = 0.05
-  end
-
   def initialize(quantity, product, price)
     @quantity = quantity
     @product = product
@@ -19,7 +14,7 @@ class Item
   end
 
   def sales_taxes
-    original_price * total_taxes
+    original_price * TaxRate.new(product).tax_rate
   end
 
   private
@@ -28,19 +23,5 @@ class Item
 
   def original_price
     quantity * price
-  end
-
-  def total_taxes
-    taxes = 0
-    taxes += TaxRate::BASIC unless exempt?
-    taxes += TaxRate::IMPORTED if imported?
-  end
-
-  def exempt?
-    false
-  end
-
-  def imported?
-    true
   end
 end
