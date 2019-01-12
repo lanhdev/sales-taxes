@@ -7,15 +7,15 @@ class Receipt
     items.push(item)
   end
 
-  def price_with_taxes
-    items.reduce(0) { |sum, item| sum + item.total_price }
+  def total_price_with_taxes
+    total = items.reduce(0) { |sum, item| sum + item.price_with_taxes }
+    FormatNumber.new(total).format_precision
   end
 
   def total_taxes
-    items.reduce(0) { |sum, item| sum + item.sales_taxes }
+    total = items.reduce(0) { |sum, item| sum + item.taxes }
+    FormatNumber.new(total).format_precision
   end
-
-  private
 
   attr_reader :items
 end

@@ -6,22 +6,22 @@ class Item
   end
 
   def decorate
-    "#{quantity}, #{product}, #{"%.2f" % total_price}"
+    [quantity, " #{product}", " #{"%.2f" % price_with_taxes}"]
   end
 
-  def total_price
-    FormatNumber.new(original_price + sales_taxes).format_round
+  def price_with_taxes
+    total_price + taxes
   end
 
-  def sales_taxes
-    original_price * TaxRate.new(product).tax_rate
+  def taxes
+    FormatNumber.new(total_price * TaxRate.new(product).tax_rate).format_round
   end
 
   private
 
   attr_reader :quantity, :product, :price
 
-  def original_price
+  def total_price
     quantity * price
   end
 end

@@ -11,6 +11,7 @@ class TaxRate
     tax = 0
     tax += BASIC unless exempt?
     tax += IMPORTED if imported?
+    tax
   end
 
   private
