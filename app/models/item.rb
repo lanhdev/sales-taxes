@@ -14,16 +14,16 @@ class Item
     rounded(original_price + sales_taxes)
   end
 
+  def sales_taxes
+    original_price * total_taxes
+  end
+
   private
 
   attr_reader :quantity, :product, :price
 
   def original_price
     quantity * price
-  end
-
-  def sales_taxes
-    original_price * total_taxes
   end
 
   def rounded(number)
