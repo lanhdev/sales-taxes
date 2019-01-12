@@ -6,7 +6,7 @@ class CSVExporter
   end
 
   def export
-    CSV.open(Dir.pwd + '/output/output.csv', 'w') do |csv|
+    CSV.open(output_file, 'w') do |csv|
       data.each do |row|
         csv << row
       end
@@ -22,5 +22,9 @@ class CSVExporter
     data += data_export.items.map(&:decorate)
     data.push(["Sales Taxes: #{data_export.total_taxes}"])
     data.push(["Total: #{data_export.total_price_with_taxes}"])
+  end
+
+  def output_file
+    Dir.pwd + '/resources/output.csv'
   end
 end

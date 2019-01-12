@@ -7,6 +7,6 @@ class ReceiptPrinter
   private
 
   def input_file
-    Dir.pwd + '/input/input1.csv'
+    Dir.pwd + '/resources/input1.csv'
   end
 end

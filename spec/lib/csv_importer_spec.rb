@@ -6,7 +6,7 @@ require_relative '../../lib/csv_importer'
 
 describe CSVImporter do
   let(:importer) { CSVImporter.new(data_import) }
-  let(:data_import) { Dir.pwd + '/input/input1.csv' }
+  let(:data_import) { Dir.pwd + '/resources/input1.csv' }
 
   describe 'import' do
     let(:item1) { Item.new(1, 'book', 12.49) }
