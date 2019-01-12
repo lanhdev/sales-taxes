@@ -13,7 +13,7 @@ describe CSVImporter do
     let(:item2) { Item.new(1, 'music cd', 14.99) }
     let(:item3) { Item.new(1, 'chocolate bar', 0.85) }
     let(:receipt) { Receipt.new }
-    let(:result) { importer.import }
+    let(:subject) { importer.import }
 
     before do
       receipt.add_item(item1)
@@ -22,15 +22,15 @@ describe CSVImporter do
     end
 
     it 'return receipt' do
-      expect(result.items[0].quantity).to eq 1
-      expect(result.items[0].product).to eq 'book'
-      expect(result.items[0].price).to eq 12.49
-      expect(result.items[1].quantity).to eq 1
-      expect(result.items[1].product).to eq 'music cd'
-      expect(result.items[1].price).to eq 14.99
-      expect(result.items[2].quantity).to eq 1
-      expect(result.items[2].product).to eq 'chocolate bar'
-      expect(result.items[2].price).to eq 0.85
+      expect(subject.items[0].quantity).to eq 1
+      expect(subject.items[0].product).to eq 'book'
+      expect(subject.items[0].price).to eq 12.49
+      expect(subject.items[1].quantity).to eq 1
+      expect(subject.items[1].product).to eq 'music cd'
+      expect(subject.items[1].price).to eq 14.99
+      expect(subject.items[2].quantity).to eq 1
+      expect(subject.items[2].product).to eq 'chocolate bar'
+      expect(subject.items[2].price).to eq 0.85
     end
   end
 end

@@ -9,26 +9,26 @@ describe Item do
   let(:price) { 14.99 }
 
   describe 'taxes' do
-    let(:result) { item.taxes }
+    let(:subject) { item.taxes }
     
     it 'return taxes' do
-      expect(result).to eq 1.5
+      expect(subject).to eq 1.5
     end
   end
 
   describe 'price_with_taxes' do
-    let(:result) { item.price_with_taxes.round(2) }
+    let(:subject) { item.price_with_taxes.round(2) }
     
     it 'return price with taxes' do
-      expect(result).to eq 16.49
+      expect(subject).to eq 16.49
     end
   end
 
   describe 'decorate' do
-    let(:result) { item.decorate }
+    let(:subject) { item.decorate }
     
     it 'return decorated item' do
-      expect(result).to eq [1, ' music cd', ' 16.49']
+      expect(subject).to eq [1, ' music cd', ' 16.49']
     end
   end
 end

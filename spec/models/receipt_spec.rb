@@ -9,16 +9,16 @@ describe Receipt do
   let(:receipt) { Receipt.new }
 
   describe 'add_item' do
-    let(:result) { receipt.add_item(item1) }
+    let(:subject) { receipt.add_item(item1) }
     
     it 'has 1 item' do
-      expect(result[0]).to eq item1
-      expect(result[1]).to eq nil
+      expect(subject[0]).to eq item1
+      expect(subject[1]).to eq nil
     end
   end
 
   describe 'total_price_with_taxes' do
-    let(:result) { receipt.total_price_with_taxes }
+    let(:subject) { receipt.total_price_with_taxes }
 
     before do
       receipt.add_item(item1)
@@ -26,12 +26,12 @@ describe Receipt do
     end
     
     it 'return total price with taxes' do
-      expect(result).to eq '28.98'
+      expect(subject).to eq '28.98'
     end
   end
 
   describe 'total_taxes' do
-    let(:result) { receipt.total_taxes }
+    let(:subject) { receipt.total_taxes }
 
     before do
       receipt.add_item(item1)
@@ -39,7 +39,7 @@ describe Receipt do
     end
     
     it 'return total taxes' do
-      expect(result).to eq '1.50'
+      expect(subject).to eq '1.50'
     end
   end
 end
