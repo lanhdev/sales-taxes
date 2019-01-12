@@ -15,7 +15,7 @@ class Item
   end
 
   def total_price
-    rounded(original_price + sales_taxes)
+    FormatNumber.new(original_price + sales_taxes).format_round
   end
 
   def sales_taxes
@@ -28,10 +28,6 @@ class Item
 
   def original_price
     quantity * price
-  end
-
-  def rounded(number)
-    (number * 20).ceil / 20.0
   end
 
   def total_taxes
