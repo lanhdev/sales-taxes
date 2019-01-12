@@ -10,6 +10,10 @@ class Item
     @price = price
   end
 
+  def decorate
+    "#{quantity}, #{product}, #{"%.2f" % total_price}"
+  end
+
   def total_price
     rounded(original_price + sales_taxes)
   end
