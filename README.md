@@ -11,66 +11,52 @@ Proper object orientated design is important. Each row in the input represents a
 # INPUT
 
 ## Input 1
->Quantity, Product, Price
-
->1, book, 12.49
-
->1, music cd, 14.99
-
->1, chocolate bar, 0.85
-
+```
+Quantity, Product, Price
+1, book, 12.49
+1, music cd, 14.99
+1, chocolate bar, 0.85
+```
 ## Input 2
->Quantity, Product, Price
-
->1, imported box of chocolates, 10.00
-
->1, imported bottle of perfume, 47.50
-
+```
+Quantity, Product, Price
+1, imported box of chocolates, 10.00
+1, imported bottle of perfume, 47.50
+```
 ## Input 3
->Quantity, Product, Price
-
->1, imported bottle of perfume, 27.99
-
->1, bottle of perfume, 18.99
-
->1, packet of headache pills, 9.75
-
->1, box of imported chocolates, 11.25
-
+```
+Quantity, Product, Price
+1, imported bottle of perfume, 27.99
+1, bottle of perfume, 18.99
+1, packet of headache pills, 9.75
+1, box of imported chocolates, 11.25
+```
 # OUTPUT
 
 ## Output 1
->1, book, 12.49
-
->1, music CD, 16.49
-
->1, chocolate bar, 0.85
-
->Sales Taxes: 1.50
-
->Total: 29.83
-
+```
+1, book, 12.49
+1, music CD, 16.49
+1, chocolate bar, 0.85
+Sales Taxes: 1.50
+Total: 29.83
+```
 ## Output 2
->1, imported box of chocolates, 10.50
-
->1, imported bottle of perfume, 54.65
-
->Sales Taxes: 7.65
-
->Total: 65.15
-
+```
+1, imported box of chocolates, 10.50
+1, imported bottle of perfume, 54.65
+Sales Taxes: 7.65
+Total: 65.15
+```
 ## Output 3
->1, imported bottle of perfume, 32.19
-
->1, bottle of perfume, 20.89
-
->1, packet of headache pills, 9.75
-
->1, imported box of chocolates, 11.85
-
->Sales Taxes: 6.70
-
->Total: 74.68
+```
+1, imported bottle of perfume, 32.19
+1, bottle of perfume, 20.89
+1, packet of headache pills, 9.75
+1, imported box of chocolates, 11.85
+Sales Taxes: 6.70
+Total: 74.68
+```
 ***
 
 # HOW TO RUN
@@ -82,7 +68,7 @@ Input files are placed in `resources` folder
 # DESIGN
 
 [1] The coding test is designed with 2 main classes:
-- `Item` represents for an item in the receipt, it calculate price with taxes and taxes of each item, with the help of `TaxRate` and `FormatNumber`.
+- `Item` represents for an item of the receipt, it calculates price with taxes and taxes of each item, with the help of `TaxRate` and `FormatNumber`.
 - `Receipt` takes all items and calculates total price with taxes and total taxes for them.
 
 [2] Additionally, there are some helpers:
@@ -93,6 +79,4 @@ Input files are placed in `resources` folder
 
 [3] Unit tests are also implemented
 - Run all specs: `rspec`
-- Run specific spec: `rspec spec/<spec_file>.rb`
-
-
+- Run specific spec: `rspec spec/<spec_file.rb`
