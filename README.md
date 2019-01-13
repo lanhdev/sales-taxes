@@ -61,9 +61,11 @@ Total: 74.68
 
 # HOW TO RUN
 
-`$ ruby main.rb ./resources/input1.csv`
+`$ ruby main.rb ./resources/<input_file>.csv`
 
 Input files are placed in `resources` folder
+
+Output file: `/resources/output.csv`
 
 # DESIGN
 
@@ -79,4 +81,4 @@ Input files are placed in `resources` folder
 
 [3] Unit tests are also implemented
 - Run all specs: `rspec`
-- Run specific spec: `rspec spec/<spec_file.rb`
+- Run specific spec: `rspec spec/<spec_file>.rb`
