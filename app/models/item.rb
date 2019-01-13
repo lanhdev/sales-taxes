@@ -6,7 +6,11 @@ class Item
   end
 
   def decorate
-    [quantity, " #{product}", " #{"%.2f" % price_with_taxes}"]
+    [
+      quantity,
+      " #{product}",
+      " #{FormatNumber.new(price_with_taxes).format_precision}"
+    ]
   end
 
   def price_with_taxes
